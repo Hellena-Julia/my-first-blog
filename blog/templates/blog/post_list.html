@@ -1,32 +1,55 @@
-<html>
-    <head>
-        <title>Hellena's Portifólio</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Hellena's Portifólio</a></h1>
-        </div>
-
-        <div>
-            <p>publicado: 14.09.2024, 12:14</p>
-            <h2><a href="">Summary</a></h2>
-            <p>Sou graduanda em História pela Universidade do Estado de Santa Catarina e, desde o início da minha trajetória (2020) já atuei profissionalmente como pesquisadora para concessão de cidadania Portuguesa e Italiana, além de já ter lecionado aulas de inglês, na Escola Dinâmica Leste para alunos do 2º, 3º, 4º e 5º anos do Ensino Fundamental, bem como aulas de História para alunos do 6º ano a 1ª série do Ensino Médio, através do Projeto PIBID (CAPES). Atualmente tenho me dedicado as áreas de análise de dados e programação, atuando profissionalmente como integrante de uma equipe voltada para inteligência comercial, onde desempenho um papel fundamental na coleta e análise de leads em uma empresa de tecnologia com sede em Rio do Sul/SC.</p>
-        </div>
-
-        <div>
-            <p>publicado: 14.09.2024, 12:14</p>
-            <h2><a href="">Experience</a></h2>
-            <p>Effecti | Tecnologia para Licitantes - Lead Development Representative. (April 2024 - Present (6 months))</p>
-        </div>
-        <p>CAPES - Coordenação de Aperfeiçoamento de Pessoal de Nível Superior - Bolsista PIBID (November 2022 - September 2023)</p>
-    </div>
-    <p>Escola Dinâmica - Assistant English Teacher (June 2022 - March 2023 (10 months))</p>
-    <div>
+<html></html>
+<head>
+    <title>Hellena's Portifólio</title>
+</head>
+<body>
+    <header>
+        <h1><a href="/">Hellena's Portifólio</a></h1>
+    </header>
+    
+    <section id="posts">
+        <!-- Iterar sobre os posts e exibi-los -->
+        {% for post in posts %}
+            <article>
+                <h2>{{ post.title }}</h2>
+                <p>Publicado: {{ post.publish_date }}</p>
+                <p>{{ post.content }}</p>
+            </article>
+        {% empty %}
+            <p></p>
+        {% endfor %}
+    </section>
+    
+    <section id="summary"></section>
         <p>publicado: 14.09.2024, 12:14</p>
-        <h3><a href="">Education</a></h3>
+        <h2><a href="">Summary</a></h2>
+        <p>Olá, me chamo Hellena!</p>
+    </section>
+
+    <section id="experience">
+        <p>publicado: 14.09.2024, 12:14</p>
+        <h2><a href="">Experience</a></h2>
+        <p>Effecti | Tecnologia para Licitantes - Lead Development Representative. (April 2024 - Present (6 months))</p>
+        <p>CAPES - Coordenação de Aperfeiçoamento de Pessoal de Nível Superior - Bolsista PIBID (November 2022 - September 2023)</p>
+        <p>Escola Dinâmica - Assistant English Teacher (June 2022 - March 2023 (10 months))</p>
+    </section>
+    
+    <section id="education">
+        <p>publicado: 14.09.2024, 12:14</p>
+        <h2><a href="">Education</a></h2>
         <p>Universidade do Estado de Santa Catarina</p>
-    </div>
-    <p>Licentiate degree, History · (August 2020 - July 2025)</p>
-    </body>
+        <p>Licentiate degree, History · (August 2020 - July 2025)</p>
+    </section>
+
+    <section id="languages"></section>
+        <p>publicado: 14.09.2024, 12:14</p>
+        <h2><a href="">Languages</a></h2>
+        <p>English - intermediary (B1)</p>
+        <p>French - basic (A1)</p>
+    </section>
+</body>
 </html>
+
+
+
 
