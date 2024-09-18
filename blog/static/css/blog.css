@@ -1,0 +1,85 @@
+/* Estilo da página header */
+.page-header {
+    background-color: #a1d88b; /* Fundo verde */
+    margin: 0; /* Remove a margem externa */
+    padding: 20px 20px 20px 40px; /* Preenchimento interno */
+}
+
+/* Estilo dos elementos dentro do cabeçalho */
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff; /* Texto branco */
+    font-size: 36pt; /* Tamanho da fonte */
+    text-decoration: none; /* Remove o sublinhado */
+    font-family: 'Lobster', cursive; /* Fonte Lobster */
+    margin: 0; /* Remove a margem externa */
+}
+
+/* Certifique-se de que não há margem ou preenchimento adicionais no body */
+body {
+    margin: 0; /* Remove a margem do body */
+    padding: 0; /* Remove o preenchimento do body */
+}
+
+/* Estilo para os cabeçalhos principais */
+h1, h2, h3, h4 {
+    font-family: 'Lobster', cursive; /* Fonte cursiva para cabeçalhos principais */
+    margin: 0; /* Remove a margem dos cabeçalhos */
+}
+
+/* Estilo para cabeçalhos de seção específicos */
+.section-heading h2 {
+    font-family: 'Times New Roman', serif; /* Fonte tradicional para cabeçalhos de seção */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Estilo para o conteúdo das seções */
+#summary, #experience, #education, #languages {
+    margin-bottom: 40px; /* Espaçamento inferior entre seções */
+}
+
+/* Espaçamento para os parágrafos */
+p {
+    margin-bottom: 15px; /* Espaçamento inferior entre parágrafos */
+}
+
+/* Estilo para os links dentro de h2 */
+h1 a, h2 a {
+    color: #100429; /* Cor dos links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+/* Estilo do conteúdo da página */
+.content {
+    margin-left: 40px; /* Espaçamento interno à esquerda */
+}
+
+/* Estilo das datas nos posts */
+.date {
+    color: #828282; /* Cor da data */
+}
+
+/* Estilo do formulário de postagem */
+.post-form textarea, .post-form input {
+    width: 100%; /* Largura total do formulário */
+}
+
+/* Estilo dos itens do menu superior */
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff; /* Cor do menu */
+    float: right; /* Alinhamento à direita */
+    font-size: 26pt; /* Tamanho da fonte do menu */
+    margin-right: 20px; /* Margem à direita */
+}
+
+/* Estilo dos posts */
+.post {
+    margin-bottom: 70px; /* Espaçamento inferior entre posts */
+}
+
+/* Estilo dos links dentro dos posts */
+.post h2 a, .post h2 a:visited {
+    color: #000000; /* Cor dos links dos posts */
+}
+body {
+    padding-left: 15px;
+}

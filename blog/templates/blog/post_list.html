@@ -1,55 +1,15 @@
-<html></html>
-<head>
-    <title>Hellena's Portifólio</title>
-</head>
-<body>
-    <header>
-        <h1><a href="/">Hellena's Portifólio</a></h1>
-    </header>
-    
-    <section id="posts">
-        <!-- Iterar sobre os posts e exibi-los -->
-        {% for post in posts %}
-            <article>
-                <h2>{{ post.title }}</h2>
-                <p>Publicado: {{ post.publish_date }}</p>
-                <p>{{ post.content }}</p>
-            </article>
-        {% empty %}
-            <p></p>
-        {% endfor %}
-    </section>
-    
-    <section id="summary"></section>
-        <p>publicado: 14.09.2024, 12:14</p>
-        <h2><a href="">Summary</a></h2>
-        <p>Olá, me chamo Hellena!</p>
-    </section>
-
-    <section id="experience">
-        <p>publicado: 14.09.2024, 12:14</p>
-        <h2><a href="">Experience</a></h2>
-        <p>Effecti | Tecnologia para Licitantes - Lead Development Representative. (April 2024 - Present (6 months))</p>
-        <p>CAPES - Coordenação de Aperfeiçoamento de Pessoal de Nível Superior - Bolsista PIBID (November 2022 - September 2023)</p>
-        <p>Escola Dinâmica - Assistant English Teacher (June 2022 - March 2023 (10 months))</p>
-    </section>
-    
-    <section id="education">
-        <p>publicado: 14.09.2024, 12:14</p>
-        <h2><a href="">Education</a></h2>
-        <p>Universidade do Estado de Santa Catarina</p>
-        <p>Licentiate degree, History · (August 2020 - July 2025)</p>
-    </section>
-
-    <section id="languages"></section>
-        <p>publicado: 14.09.2024, 12:14</p>
-        <h2><a href="">Languages</a></h2>
-        <p>English - intermediary (B1)</p>
-        <p>French - basic (A1)</p>
-    </section>
-</body>
-</html>
-
-
-
-
+{% extends 'blog/base.html' %}
+{% block content %}
+                {% for post in posts %}
+                    <div class="post">
+                        <div class="date">
+                            <p>published: {{ post.published_date }}</p>
+                        </div>
+                        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+    <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+    {% empty %}
+        <p>No posts available.</p>
+    {% endfor %}
+{% endblock %}
+            

@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hellena's Portifólio</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="page-header">
+        <h1><a href="/">Hellena's portifolio</a></h1>
+    </div>
+
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                {% block content %}
+                <!-- Adicionando o conteúdo dos posts -->
+                {% for post in posts %}
+                    <div class="post">
+                        <div class="date">
+                            <p>published: {{ post.published_date }}</p>
+                        </div>
+                        <h2><a href="">{{ post.title }}</a></h2>
+                        <p>{{ post.text|linebreaksbr }}</p>
+                    </div>
+                {% empty %}
+                    <p>No posts available.</p>
+                {% endfor %}
+                {% endblock %}
+
+                <!-- Seções adicionais como Summary, Experience, Education, e Languages -->
+                <div class="post2 section-heading">
+                    <section id="summary">
+                        <p>publicado: 14.09.2024, 12:14</p>
+                        <h2><a href="">Summary</a></h2>
+                        <p>I am a History student at the State University of Santa Catarina. Since 2020, I've worked as a researcher for Portuguese and Italian citizenship cases. I've also taught English to primary students and History to secondary and high school students through the PIBID Project (CAPES). Currently, I focus on data analysis and programming, working in a commercial intelligence team at a tech company in Rio do Sul/SC, where I handle data collection, lead generation, and strategy analysis.</p>
+                    </section>
+                </div>
+
+                <div class="post3 section-heading">
+                    <section id="experience">
+                        <p class="experience-date">publicado: 14.09.2024, 12:14</p>
+                        <h2><a href="">Experience</a></h2>
+                        <p>Effecti | Technology for Bidders - Lead Development Representative. (April 2024 - Present)
+                            <br>
+                            - I work on the pre-sales team for lead qualification, commercial data analysis and demand generation strategies.
+                        </p>
+                        <p>CAPES - Coordenação de Aperfeiçoamento de Pessoal de Nível Superior - PIBID Scholarship (November 2022 - September 2023)
+                            <br>
+                            - Immersion in basic education for improvement of teaching skills.
+                        </p>
+                        <p>Escola Dinâmica - Assistant English Teacher (June 2022 - March 2023)
+                            <br>
+                            - Classroom assistant in bilingual teaching, teaching and monitoring classes in elementary school 1. Preparation of lesson plans, teaching materials and teaching activities. Also working on summer camp duty with Pre-school children.
+                        </p>
+                        <p>Moccelin JR - Internship (January 2022 - May 2022)
+                            <br>
+                            - Historical research for granting Portuguese and Italian citizenship.
+                        </p>
+                    </section>
+                </div>
+                
+                <div class="post4 section-heading">
+                    <section id="education">
+                        <p>publicado: 14.09.2024, 12:14</p>
+                        <h2><a href="">Education</a></h2>
+                        <p>Universidade do Estado de Santa Catarina</p>
+                        <p>Licentiate degree, History · (August 2020 - July 2025)</p>
+                    </section>
+                </div>
+
+                <div class="post5 section-heading">
+                    <section id="languages">
+                        <p>publicado: 14.09.2024, 12:14</p>
+                        <h2><a href="">Languages</a></h2>
+                        <p>English - intermediary (B1)</p>
+                        <p>French - basic (A1)</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
