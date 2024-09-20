@@ -7,12 +7,22 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="page-header">
         {% if user.is_authenticated %}
-    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-{% endif %}
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        {% endif %}
         <h1><a href="/">Hellena's Portifólio</a></h1>
     </div>
 
@@ -20,35 +30,19 @@
         <div class="row">
             <div class="col-md-8">
                 {% block content %}
-                <!-- Adicionando o conteúdo dos posts -->
-                {% for post in posts %}
-                    <div class="post">
-                        <div class="date">
-                            <p>Published: {{ post.published_date }}</p>
-                        </div>
-                        <h2><a href="">{{ post.title }}</a></h2>
-                        <p>{{ post.text|linebreaksbr }}</p>
-                    </div>
-                {% empty %}
-                    <p>No posts available.</p>
-                {% endfor %}
-                {% endblock %}
-
-                <!-- Seções adicionais como Summary, Experience, Education, e Languages -->
-                <div class="post2 section-heading">
-                    <section id="summary">
-                        <p>Published: 14.09.2024, 12:14</p>
-                        <h2><a href="">Summary</a></h2>
+                
+                <div class="post">
+                    <h2><a href="#" onclick="toggleContent('summary')">Summary</a></h2>
+                    <div id="summary" style="display: none;">
                         <p>I am currently pursuing a Bachelor's degree in History at the State University of Santa Catarina (UDESC). Since 2020, I have been working as a researcher specializing in Portuguese and Italian citizenship cases. Additionally, I have experience teaching English to primary school students and History to secondary and high school students through the PIBID Program (CAPES).
-                            <br> 
-                            Presently, my focus is on data analysis and programming. I work within the commercial intelligence team of a tech company in Rio do Sul, SC, where I manage data collection, lead generation, and analyze commercial strategies.</p>
-                    </section>
+                        <br> 
+                        Presently, my focus is on data analysis and programming. I work within the commercial intelligence team of a tech company in Rio do Sul, SC, where I manage data collection, lead generation, and analyze commercial strategies.</p>
+                    </div>
                 </div>
 
-                <div class="post3 section-heading">
-                    <section id="experience">
-                        <p class="experience-date">Published: 14.09.2024, 12:14</p>
-                        <h2><a href="">Experience</a></h2>
+                <div class="post">
+                    <h2><a href="#" onclick="toggleContent('experience')">Experience</a></h2>
+                    <div id="experience" style="display: none;">
                         <p>Effecti | Technology for Bidders - Lead Development Representative. (April 2024 - Present)
                             <br>
                             - I work on the pre-sales team for lead qualification, commercial data analysis and demand generation strategies.
@@ -65,25 +59,29 @@
                             <br>
                             - Historical research for granting Portuguese and Italian citizenship.
                         </p>
-                    </section>
-                </div>
-                
-                <div class="post4 section-heading">
-                    <section id="education">
-                        <p>Published: 14.09.2024, 12:14</p>
-                        <h2><a href="">Education</a></h2>
-                        <p>State University of Santa Catarina (UDESC)</p>
-                        <p>Licentiate degree, History · (August 2020 - July 2025)</p>
-                    </section>
+                    </div>
                 </div>
 
-                <div class="post5 section-heading">
-                    <section id="languages">
-                        <p>Published: 14.09.2024, 12:14</p>
-                        <h2><a href="">Languages</a></h2>
+                <div class="post">
+                    <h2><a href="#" onclick="toggleContent('education')">Education</a></h2>
+                    <div id="education" style="display: none;">
+                        <p>State University of Santa Catarina (UDESC)</p>
+                        <p>Licentiate degree, History · (August 2020 - July 2025)</p>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <h2><a href="#" onclick="toggleContent('languages')">Languages</a></h2>
+                    <div id="languages" style="display: none;">
                         <p>English - Intermediary (B1)</p>
                         <p>French - Basic (A1)</p>
-                    </section>
+                    </div>
+                </div>
+
+                {% endblock %}
+
+                <div class="date" style="margin-top: 20px;">
+                    <p>Published: 14.09.2024, 12:14</p>
                 </div>
             </div>
         </div>

@@ -83,3 +83,12 @@ h1 a, h2 a {
 body {
     padding-left: 15px;
 }
+.post h2 a {
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+h2 {
+    margin-bottom: 20px; /* Ajuste o valor conforme necessário */
+}
+.toggle-header {
+    margin-bottom: 20px;
+}

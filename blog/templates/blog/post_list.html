@@ -1,19 +1,80 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    {% for post in posts %}
-        <div class="post">
-            {% if post.published_date %}
-                <div class="date">
-                    {{ post.published_date }}
-                </div>
-            {% endif %}
-            {% if user.is_authenticated and user == post.author %}
-                <a class="btn btn-primary" href="{% url 'post_edit' pk=post.pk %}">Editar</a>
-            {% endif %}
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.text|linebreaksbr }}</p>
+    <!-- Conteúdo estático -->
+    <div class="post">
+        <h2><a href="#" onclick="toggleContent('summary')">Summary</a></h2>
+        <br>
+        <div id="summary" style="display: none;">
+            <p>
+                I am currently pursuing a Bachelor's degree in History at the State University of Santa Catarina (UDESC). Since 2020, I have been working as a researcher specializing in Portuguese and Italian citizenship cases. Additionally, I have experience teaching English to primary school students and History to secondary and high school students through the PIBID Program (CAPES).
+                <br> 
+                Presently, my focus is on data analysis and programming. I work within the commercial intelligence team of a tech company in Rio do Sul, SC, where I manage data collection, lead generation, and analyze commercial strategies.
+            </p>
         </div>
-    {% endfor %}
+    </div>
+
+    <div class="post">
+        <h2><a href="#" onclick="toggleContent('experience')">Experience</a></h2>
+        <br>
+        <div id="experience" style="display: none;">
+            <p>Effecti | Technology for Bidders - Lead Development Representative. (April 2024 - Present)
+                <br>
+                - I work on the pre-sales team for lead qualification, commercial data analysis and demand generation strategies.
+            </p>
+            <p>CAPES - Coordenação de Aperfeiçoamento de Pessoal de Nível Superior - PIBID Scholarship (November 2022 - September 2023)
+                <br>
+                - Immersion in basic education for improvement of teaching skills.
+            </p>
+            <p>Escola Dinâmica - Assistant English Teacher (June 2022 - March 2023)
+                <br>
+                - Classroom assistant in bilingual teaching, teaching and monitoring classes in elementary school 1. Preparation of lesson plans, teaching materials and teaching activities. Also working on summer camp duty with Pre-school children.
+            </p>
+            <p>Moccelin JR - Internship (January 2022 - May 2022)
+                <br>
+                - Historical research for granting Portuguese and Italian citizenship.
+            </p>
+        </div>
+    </div>
+
+    <div class="post">
+        <h2><a href="#" onclick="toggleContent('education')">Education</a></h2>
+        <br>
+        <div id="education" style="display: none;">
+            <p>State University of Santa Catarina (UDESC)</p>
+            <p>Licentiate degree, History · (August 2020 - July 2025)</p>
+        </div>
+    </div>
+
+    <div class="post">
+        <h2><a href="#" onclick="toggleContent('languages')">Languages</a></h2>
+        <br>
+        <div id="languages" style="display: none;">
+            <p>English - Intermediary (B1)</p>
+            <p>French - Basic (A1)</p>
+        </div>
+    </div>
+
+    <!-- Data de publicação estática -->
+    <div class="date" style="margin-top: 20px;">
+        <p>Published: 14.09.2024, 12:14</p>
+    </div>
+
+    <!-- Posts dinâmicos -->
+    <hr>
+    <h2>Posts Recentes</h2>
+    {% if posts %}
+        {% for post in posts %}
+            <div class="post">
+                <div class="date">
+                    <p>Published: {{ post.published_date|date:"d.m.Y, H:i" }}</p>
+                </div>
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No posts available.</p>
+    {% endif %}
 {% endblock %}
             
