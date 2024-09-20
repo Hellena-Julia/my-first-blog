@@ -10,7 +10,10 @@
 </head>
 <body>
     <div class="page-header">
-        <h1><a href="/">Hellena's portifolio</a></h1>
+        {% if user.is_authenticated %}
+    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+{% endif %}
+        <h1><a href="/">Hellena's Portifólio</a></h1>
     </div>
 
     <div class="content container">
@@ -21,7 +24,7 @@
                 {% for post in posts %}
                     <div class="post">
                         <div class="date">
-                            <p>published: {{ post.published_date }}</p>
+                            <p>Published: {{ post.published_date }}</p>
                         </div>
                         <h2><a href="">{{ post.title }}</a></h2>
                         <p>{{ post.text|linebreaksbr }}</p>
@@ -34,15 +37,17 @@
                 <!-- Seções adicionais como Summary, Experience, Education, e Languages -->
                 <div class="post2 section-heading">
                     <section id="summary">
-                        <p>publicado: 14.09.2024, 12:14</p>
+                        <p>Published: 14.09.2024, 12:14</p>
                         <h2><a href="">Summary</a></h2>
-                        <p>I am a History student at the State University of Santa Catarina. Since 2020, I've worked as a researcher for Portuguese and Italian citizenship cases. I've also taught English to primary students and History to secondary and high school students through the PIBID Project (CAPES). Currently, I focus on data analysis and programming, working in a commercial intelligence team at a tech company in Rio do Sul/SC, where I handle data collection, lead generation, and strategy analysis.</p>
+                        <p>I am currently pursuing a Bachelor's degree in History at the State University of Santa Catarina (UDESC). Since 2020, I have been working as a researcher specializing in Portuguese and Italian citizenship cases. Additionally, I have experience teaching English to primary school students and History to secondary and high school students through the PIBID Program (CAPES).
+                            <br> 
+                            Presently, my focus is on data analysis and programming. I work within the commercial intelligence team of a tech company in Rio do Sul, SC, where I manage data collection, lead generation, and analyze commercial strategies.</p>
                     </section>
                 </div>
 
                 <div class="post3 section-heading">
                     <section id="experience">
-                        <p class="experience-date">publicado: 14.09.2024, 12:14</p>
+                        <p class="experience-date">Published: 14.09.2024, 12:14</p>
                         <h2><a href="">Experience</a></h2>
                         <p>Effecti | Technology for Bidders - Lead Development Representative. (April 2024 - Present)
                             <br>
@@ -65,19 +70,19 @@
                 
                 <div class="post4 section-heading">
                     <section id="education">
-                        <p>publicado: 14.09.2024, 12:14</p>
+                        <p>Published: 14.09.2024, 12:14</p>
                         <h2><a href="">Education</a></h2>
-                        <p>Universidade do Estado de Santa Catarina</p>
+                        <p>State University of Santa Catarina (UDESC)</p>
                         <p>Licentiate degree, History · (August 2020 - July 2025)</p>
                     </section>
                 </div>
 
                 <div class="post5 section-heading">
                     <section id="languages">
-                        <p>publicado: 14.09.2024, 12:14</p>
+                        <p>Published: 14.09.2024, 12:14</p>
                         <h2><a href="">Languages</a></h2>
-                        <p>English - intermediary (B1)</p>
-                        <p>French - basic (A1)</p>
+                        <p>English - Intermediary (B1)</p>
+                        <p>French - Basic (A1)</p>
                     </section>
                 </div>
             </div>
