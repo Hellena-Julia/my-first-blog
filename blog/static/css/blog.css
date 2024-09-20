@@ -92,3 +92,7 @@ h2 {
 .toggle-header {
     margin-bottom: 20px;
 }
+.content p {
+    margin-top: 1em; /* Adicione espaço acima do parágrafo */
+    margin-bottom: 1em; /* Adicione espaço abaixo do parágrafo */
+}
